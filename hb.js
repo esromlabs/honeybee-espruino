@@ -1,18 +1,20 @@
 var g = {"graph":{"name":"Hello World"}, 
  "nodes":[
-  {"id":"n0","name":"selector","io":{"selector":"#start_button"}},
+  {"id":"n0","name":"selector","io":{"selector":"#Pin1"}},
   {"id":"n1","name":"concat","process":["this.greeting = salutation + ' ' + name;"]},
   {"id":"n2","name":"","data":{"salutation":"Hello"}},
-  {"id":"n3","name":"selector","io":{"selector":".greeting"}},
+  {"id":"n3","name":"selector","io":{"selector":"console"}},
   {"id":"n4","name":"name","data":{"name":"World"}},
-  {"id":"n5","name":"end","data":{}}
+  {"id":"n5","name":"end","data":{"value":true}},
+  {"id":"n6","name":"selector","io":{"selector":"#Pin1"}}
  ],
  "edges":[
-  ["n0","n1","sub","click","",0],
+  ["n0","n1","sub","low","",0],
   ["n1","n2","get","salutation","",1],
   ["n1","n4","get","name","",2],
   ["n1","n3","set","greeting","",3],
-  ["n1","n5","flo","next","",4]
+  ["n5","n6","set","","",4],
+  ["n1","n5","flo","next","",5]
  ]
 };
 
